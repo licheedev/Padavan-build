@@ -69,6 +69,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config #删除配置项阿里DDNS
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d' .config #删除配置项smartdns
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DDNSTO/d' .config #删除配置项DDNSTO
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_WIREGUAR/d' .config #删除配置项WireGuard
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ######################################################################
@@ -88,6 +89,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config  #阿里云盘  ~3m
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #aliddns
+        echo "CONFIG_FIRMWARE_INCLUDE_WIREGUAR=n" >> .config #WireGuard
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> .config #smartdns二进制文件
         else
