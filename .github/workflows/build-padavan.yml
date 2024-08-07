@@ -46,7 +46,8 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: JDCLOUD-RE-SP-01B
+        #TNAME: JDCLOUD-RE-SP-01B
+        TNAME: JDC-1
         KERNEL: 4.4
       run: |
         cd /opt/rt-n56u/trunk
