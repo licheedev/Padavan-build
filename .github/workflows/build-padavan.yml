@@ -54,7 +54,7 @@ jobs:
         exit 1
         fi
         cp -f configs/templates/$TNAME.config .config
-        sed -i 'define BOARD_NUM_ETH_EPHY/d' configs/boards/RE-SP-01B/board.h
+        sed -i '/define BOARD_NUM_ETH_EPHY/d' configs/boards/RE-SP-01B/board.h
         echo  "#define BOARD_NUM_ETH_EPHY		4" >> configs/boards/RE-SP-01B/board.h
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ################################################################################################
