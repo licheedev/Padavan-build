@@ -56,7 +56,6 @@ jobs:
         cp -f configs/templates/$TNAME.config .config
         sed -i '/BOARD_NUM_ETH_EPHY/d' configs/boards/RE-SP-01B/board.h
         echo  "#define BOARD_NUM_ETH_EPHY		3" >> configs/boards/RE-SP-01B/board.h
-        sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
         ################################################################################################
@@ -93,7 +92,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
-        sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE/d' .config
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
@@ -117,6 +116,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >> .config #WireGuard
         echo "CONFIG_FIRMWARE_INCLUDE_NFSC=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=y" >> .config
+         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y" >> .config
         else
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
