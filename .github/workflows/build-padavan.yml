@@ -74,6 +74,8 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DDNSTO/d' .config #删除配置项DDNSTO
         sed -i '/CONFIG_FIRMWARE_INCLUDE_WIREGUARD/d' .config #删除配置项WireGuard
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TROJAN/d' .config
+        sed -i '/CONFIG_FIRMWARE_ENABLE_FUSE/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_HTTPS/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XRAY/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_V2RAY/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SSOBFS/d' .config
@@ -114,6 +116,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >> .config #WireGuard
         echo "CONFIG_FIRMWARE_INCLUDE_NFSC=n" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_HTTPS=y" >> .config
         else
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
